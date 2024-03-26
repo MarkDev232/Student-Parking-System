@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ec5b5e83-6fa1-4aa8-98c9-bfb86a41d8b6">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="379"/>
+	<property name="ireport.y" value="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT Reciept_No,Stud_Number,Pay FROM transaction;]]>
+	</queryString>
+	<field name="Reciept_No" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Stud_Number" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Pay" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="TOTALPAY" class="java.lang.Integer" incrementType="Column" calculation="Sum"/>
+	<group name="Reciept_No">
+		<groupExpression><![CDATA[$F{Reciept_No}]]></groupExpression>
+	</group>
+	<group name="Stud_Number">
+		<groupExpression><![CDATA[$F{Stud_Number}]]></groupExpression>
+	</group>
+	<group name="Pay">
+		<groupExpression><![CDATA[$F{Pay}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="159" y="42" width="247" height="20" uuid="c1cccedb-32b5-41ee-a71d-738c26200625"/>
+				<textElement>
+					<font fontName="Copperplate Gothic Bold" size="16"/>
+				</textElement>
+				<text><![CDATA[STUDENT REPORT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<line>
+				<reportElement x="26" y="21" width="473" height="1" uuid="36bf4575-1520-4abe-b9e4-4f81a712d4ad"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="59" y="14" width="100" height="20" uuid="02c09ac1-cd4e-4480-8c85-962a03001be8"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reciept_No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="14" width="100" height="20" uuid="059d3a88-1456-4078-8262-088a658150fe"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stud_Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="438" y="14" width="100" height="20" uuid="2ec2bdcd-eb11-4b94-b3b9-71aa044497b3"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pay]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<textField>
+				<reportElement x="438" y="11" width="100" height="20" uuid="f49f470e-e81f-4ff9-9c71-15647a31b621"/>
+				<textFieldExpression><![CDATA[$F{Pay}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="229" y="11" width="100" height="20" uuid="b5f96377-188d-416f-b985-7758da86f056"/>
+				<textFieldExpression><![CDATA[$F{Stud_Number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="59" y="11" width="100" height="20" uuid="a101af04-0ee3-4e79-92a0-1056c03dffcd"/>
+				<textFieldExpression><![CDATA[$F{Reciept_No}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="229" y="12" width="100" height="20" uuid="36d85561-8668-4ed9-8448-63196e73fd22"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[TOTAL PAY]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

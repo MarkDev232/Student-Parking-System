@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="413e5153-2e7d-4960-8d21-ba28e0c5d484">
+	<property name="ireport.zoom" value="1.6105100000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select
+ Reciept_No,Stud_Number,Pay
+from
+transaction]]>
+	</queryString>
+	<field name="Reciept_No" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Stud_Number" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Pay" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="89" y="0" width="320" height="33" uuid="4d110db2-03e4-4547-b7af-e2dd405524c5"/>
+				<textElement>
+					<font fontName="Copperplate Gothic Bold" size="24"/>
+				</textElement>
+				<text><![CDATA[STUDENT REPORT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="89" y="48" width="320" height="1" uuid="34e4981c-e5b3-4fee-9fc3-0f28fa7a3bc4"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="22" y="1" width="100" height="20" uuid="4bef3cd6-594b-44ed-87ba-cc4ab8ba5db9"/>
+				<text><![CDATA[Reciept_No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="201" y="1" width="100" height="20" uuid="5dc9be90-62e9-4c70-b133-b4bc5be43f64"/>
+				<text><![CDATA[Stud_Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="1" width="100" height="20" uuid="c5b138a0-2f29-40ef-9241-ff3e9261b422"/>
+				<text><![CDATA[Pay]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<line>
+				<reportElement x="-26" y="-1" width="600" height="1" uuid="8fc41f84-d586-4917-957e-2b8fa7ae642b"/>
+			</line>
+			<textField>
+				<reportElement x="201" y="0" width="100" height="20" uuid="e8fc49be-8806-410b-a2a1-d87f645140f0"/>
+				<textFieldExpression><![CDATA[$F{Stud_Number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="374" y="3" width="100" height="20" uuid="f94e0da6-fd09-41aa-95d2-263d28815c0e"/>
+				<textFieldExpression><![CDATA[$F{Pay}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="21" y="3" width="100" height="20" uuid="11257425-ce24-4efc-ae66-2482a87d6018"/>
+				<textFieldExpression><![CDATA[$F{Reciept_No}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="258" y="10" width="100" height="20" uuid="651d209e-d604-4db2-b1d0-58b94c9e6769"/>
+				<text><![CDATA[TOTAL PAY:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="374" y="10" width="100" height="20" uuid="a424cec8-0293-4ba7-8916-39ce00bff93f"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
